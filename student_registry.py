@@ -48,11 +48,14 @@ class Student:
     def __str__(self):
         return f"Student 1: Name: {self.name}, Age: {self.age}, Grade: {self.grade}"
 
-    def advance(self):
-        pass
+    def advance(self, years_advanced=1):
+        current_grade_num = int(self._grade.removesuffix("th")) #<-- get the grade number
+        new_grade = current_grade_num + years_advanced
+        self.grade = f"{new_grade}th"
+        return f"{self.name} has advanced to the {self.grade} grade"
 
-    def study(self):
-        print("Francisco is studying Computer Science")
+    def study(self, subject):
+        return (f"{self.name} is studying {subject}")
 
 
 # Start of new objects...
